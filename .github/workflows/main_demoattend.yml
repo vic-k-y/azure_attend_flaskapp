@@ -61,3 +61,4 @@ jobs:
           app-name: 'demoattend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A68AE78D719949CFA63B41DD2C0066F8 }}
+
