@@ -85,6 +85,10 @@ def get_attendance_data(name):
     ibm_db.close(conn)
     return no[0]
 
+@app.route('/', methods=['GET'])
+def page():
+    return "<h1>Use this API</h1>",200
+
 @app.route('/attendance', methods=['GET'])
 def get_attendance():
     name = request.args.get('name')
@@ -92,7 +96,7 @@ def get_attendance():
         return "Please provide a 'name' parameter in the query string.", 400
     attendance_data = get_attendance_data(name)
     res = {'name': name, 'attendance_days': attendance_data}
-    return jsonify(res)
+    return res, 200
 
 if __name__ == '__main__':
     app.run()
